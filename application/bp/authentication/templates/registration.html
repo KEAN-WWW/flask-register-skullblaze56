@@ -1,11 +1,19 @@
 {% extends "base.html" %}
-    {% from 'bootstrap5/form.html' import render_form, render_field, render_form_row %}
+{% from 'bootstrap5/form.html' import render_form %}
 
 {% block title %}Registration{% endblock %}
 {% block content %}
-
-<h1>User Registration Form</h1>
-
-    {{ render_form(form) }}
-
+    <div class="content-section">
+        <h2>Register</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {{ render_form(form) }}
+    </div>
 {% endblock %}
