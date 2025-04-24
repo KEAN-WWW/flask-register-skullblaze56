@@ -51,7 +51,8 @@ def create_app(config_name='default'):
         
         app.register_blueprint(bp_homepage)
         app.register_blueprint(authentication)
-        return app
+    
+    return app
 
 def init_app():
     return create_app()
