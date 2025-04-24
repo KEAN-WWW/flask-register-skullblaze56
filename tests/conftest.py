@@ -1,6 +1,7 @@
+"""Test configuration module"""
 import pytest
-from application import create_app
-from application.database import db
+from application.__init__ import create_app
+from application.database import db, User
 import os
 
 # Get the test database path
