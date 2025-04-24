@@ -1,8 +1,8 @@
 """Test configuration module"""
 import pytest
-from application.__init__ import create_app
-from application.database import db, User
 import os
+from application.factory import create_app
+from application.database import db, User
 
 # Get the test database path
 TEST_DB = "test.db"
@@ -29,7 +29,7 @@ def create_test_app():
 @pytest.fixture
 def client(app):
     """Create test client with app context"""
-    return app.test_client()  # No need for context here since app fixture provides it
+    return app.test_client()
 
 @pytest.fixture
 def runner(app):
