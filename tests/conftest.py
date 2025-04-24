@@ -1,7 +1,7 @@
 """Test configuration module"""
 import pytest
 import os
-from application.factory import create_app
+from application import create_app
 from application.database import db, User
 
 # Get the test database path
